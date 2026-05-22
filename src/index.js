@@ -355,12 +355,18 @@ async function run() {
     res.status(404).send({ message: "API route not found" });
   });
 
-  app.listen(port, () => {
-    console.log(`IdeaVault server running on port ${port}`);
-  });
+  if (!process.env.VERCEL) {
+    app.listen(port, () => {
+      console.log(`IdeaVault server running on port ${port}`);
+    });
+  }
 }
+
+export default app;
 
 run().catch((error) => {
   console.error("Server startup error:", error);
   process.exit(1);
 });
+
+
