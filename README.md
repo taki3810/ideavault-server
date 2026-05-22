@@ -1,27 +1,23 @@
-# IdeaVault Server
+IdeaVault Server
 
-Express + MongoDB + JWT backend for IdeaVault.
+Backend server for IdeaVault, a startup idea sharing platform where users can post ideas and interact through comments.
 
-## Run Locally
+Live API: https://ideavault-server-iota.vercel.app
 
-```bash
-npm install
-cp .env.example .env
-npm run dev
-```
 
-## Main APIs
+Features
 
-- `POST /jwt`
-- `GET /ideas`
-- `GET /ideas/:id`
-- `POST /ideas`
-- `PATCH /ideas/:id`
-- `DELETE /ideas/:id`
-- `GET /my-ideas?email=`
-- `GET /comments/idea/:ideaId`
-- `POST /comments`
-- `PATCH /comments/:id`
-- `DELETE /comments/:id`
-- `GET /my-interactions?email=`
+- JWT authentication
+- CRUD operations for ideas and comments
+- Protected routes
+- Search and filter support
+- MongoDB integration
 
+
+Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- Vercel
