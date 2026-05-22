@@ -362,11 +362,11 @@ async function run() {
   }
 }
 
-export default app;
 
-run().catch((error) => {
+
+await run().catch((error) => {
   console.error("Server startup error:", error);
-  process.exit(1);
+  throw error;
 });
 
-
+export default app;
