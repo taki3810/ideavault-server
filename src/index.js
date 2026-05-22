@@ -28,6 +28,13 @@ app.use(
   })
 );
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send({
+    name: "IdeaVault API",
+    status: "running",
+    message: "Startup idea sharing platform server is live.",
+  });
+});
 
 const client = new MongoClient(mongoUri, {
   serverApi: {
@@ -364,9 +371,8 @@ async function run() {
 
 
 
-await run().catch((error) => {
-  console.error("Server startup error:", error);
-  throw error;
-});
-
 export default app;
+
+run().catch((error) => {
+  console.error("Server startup error:", error);
+});
