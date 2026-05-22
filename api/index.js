@@ -1,4 +1,6 @@
+import app, { ready } from "../src/index.js";
 
-import app from "../src/index.js";
-
-export default app;
+export default async function handler(req, res) {
+  await ready;
+  return app(req, res);
+}

@@ -371,8 +371,9 @@ async function run() {
 
 
 
-await run().catch((error) => {
+export const ready = run().catch((error) => {
   console.error("Server startup error:", error);
+  throw error;
 });
 
 export default app;
