@@ -371,7 +371,9 @@ async function run() {
 
 
 
-export default app;
+export default function handler(req, res) {
+  return app(req, res);
+}
 
 run().catch((error) => {
   console.error("Server startup error:", error);
